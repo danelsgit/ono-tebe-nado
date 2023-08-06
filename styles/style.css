@@ -6,7 +6,9 @@
 
 .header {
   display: flex;
+  flex-wrap: nowrap;
   justify-content: space-between;
+  width: auto;
   padding: 92px 50px;
 }
 
@@ -22,10 +24,10 @@
 .header__links-list {
   display: flex;
   align-items: center;
+  gap: 32px;
 }
 
 .header__links-list-item {
-  padding-right: 32px;
   list-style: circle;
 }
 
@@ -35,19 +37,19 @@
 
 .header__logo {
   display: flex;
+  margin-right: 11%;
+}
+
+.header__logo-image {
   width: 148px;
   height: 105px;
 }
 
-.header__logo-image {
-  display: flex; 
-  width: 100%;
-}
-
-.header__address {
-  max-width: 240px;
-  margin-left: 180px;
-  padding-top: 10px;
+.address {
+  display: flex;
+  flex-direction: column;
+  width: 240px;
+  padding-top: 3px;
   color: #000;
   font-weight: 400;
   font-size: 18px;
@@ -61,29 +63,36 @@
 
 .cover {
   position: relative;
-  background-position: center;
-}
-.overlay {
   min-height: 757px;
   background-image: url("../images/cover.jpg");
   background-repeat: no-repeat;
+  background-position: center;
   background-size: cover;
+}
+.overlay {
+  width: auto;
+  background-position: center;
 }
 .cover__title {
   position: relative;
   z-index: 1;
   display: flex;
   flex-wrap: wrap;
-  max-height: 757px;
+  gap: 20px;
+  height: 355px;
+  padding-top: 165px;
+  padding-right: 50px;
+  padding-left: 50px;
   color: #fff;
   font-weight: 700;
   font-size: 100px;
   font-style: normal;
   line-height: 115%; /* 115px */
+  letter-spacing: 30px;
   text-transform: uppercase;
 }
 
-.cover::before {
+.overlay::before {
   content: "";
   position: absolute;
   top: 0;
@@ -95,11 +104,19 @@
 }
 
 .aligned-text {
-  letter-spacing: 30px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  height: 115px;
 }
 
 .aligned-text_center {
-  letter-spacing: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100px;
   text-align: center;
 }
 
@@ -107,41 +124,17 @@
   letter-spacing: 60px;
 }
 
-.letter-spacing-extended-two {
-  letter-spacing: 60px;
-  text-align: right;
+.no-letter-spacing {
+  letter-spacing: 0px;
 }
 
 .aligned-text_right {
-  letter-spacing: 30px;
-}
-
-.start__title {
-  position: relative;
-  display: flex;
-  align-items: center;
-  width: 100%;
-  padding-top: 170px;
-  padding-left: 50px;
-}
-
-.center__title {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  padding-top: 8px;
-}
-
-.end__title {
-  position: relative;
   display: flex;
   justify-content: flex-end;
   align-items: center;
   width: 100%;
-  padding-top: 4px;
-  padding-right: 50px;
+  height: 100px;
+  padding-left: 30px;
 }
 
 .cover__description {
@@ -150,8 +143,7 @@
   justify-content: end;
   align-items: center;
   max-width: 1390px;
-  min-height: 52px;
-  margin-top: 118px;
+  margin-top: 288px;
   padding-top: 12px;
 }
 
@@ -191,14 +183,16 @@
 .lots {
   display: flex;
   flex-flow: wrap;
-  max-width: 1340px;
   margin-top: 165px;
+  padding-right: 50px;
+  padding-left: 50px;
 }
+
 .lots__heading {
   display: flex;
-  margin-bottom: 28px;
-  margin-left: 88px;
-  padding-top: 15px;
+  margin-bottom: 26px;
+  margin-left: 38px;
+  padding-top: 18px;
   color: #000;
   font-weight: 700;
   font-size: 40px;
@@ -209,16 +203,14 @@
 
 .lots__card-list {
   display: flex;
+  flex-wrap: wrap;
   gap: 25px;
   margin-bottom: 10px;
-  margin-left: 50px;
   list-style: none;
 }
 
 .lots__card-list-item {
   display: flex;
-  flex-grow: 1;
-  background-size: cover;
 }
 
 .card-link {
@@ -232,9 +224,11 @@
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  min-width: 430px;
-  min-height: 450px;
+  width: 430px;
+  height: 450px;
   padding: 50px 40px 50px 40px;
+  background-position: center;
+  background-size: cover;
 }
 
 .card_type_film {
@@ -271,7 +265,7 @@
 
 .lots__look-more-link {
   margin-top: 20px;
-  margin-left: 90px;
+  margin-left: 40px;
   color: #000;
   font-weight: 400;
   font-size: 20px;
@@ -286,7 +280,8 @@
   align-items: start;
   column-gap: 25px;
   max-width: 1340px;
-  margin-top: 180px;
+  margin-top: 182px;
+  margin-right: 50px;
   margin-left: 50px;
 }
 
@@ -301,7 +296,7 @@
 .about__column {
   display: grid;
   row-gap: 21px;
-  margin-top: 104px;
+  margin-top: 100px;
 }
 
 .about__logo {
@@ -349,6 +344,7 @@
 }
 
 .footer__menu {
+  margin-top: 3px;
   color: #000;
   font-weight: 400;
   font-size: 18px;
